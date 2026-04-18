@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 from src.pricing import black_scholes
 
 
@@ -16,6 +17,10 @@ def plot_call_price_vs_volatility():
         call_price, _ = black_scholes(S, K, T, r, sigma)
         call_prices.append(call_price)
 
+    output_dir = Path("figures")
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / "call_price_vs_volatility.png"
+
     plt.figure(figsize=(8, 5))
     plt.plot(volatilities, call_prices, linewidth=2)
     plt.title("Call Option Price vs Volatility")
@@ -23,7 +28,7 @@ def plot_call_price_vs_volatility():
     plt.ylabel("Call Option Price")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("figures/call_price_vs_volatility.png", dpi=300)
+    plt.savefig(output_path, dpi=300)
     plt.show()
 
 
