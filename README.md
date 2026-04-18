@@ -4,7 +4,7 @@ A Python project for pricing European call and put options with the Black-Schole
 
 ## Project background
 
-This project originally began as a single Python file that implemented Black-Scholes option pricing and basic sensitivity analysis. I later refactored it into a structured GitHub repository to improve code organization, readability, reproducibility, and future extensibility.
+This project originally began as a single Python script (`black-scholes.py`) that implemented Black-Scholes pricing and Greeks-based sensitivity analysis. It was later refactored into a structured GitHub repository with modular files for pricing, Greeks, utilities, and the command-line interface.
 
 ## Features
 
