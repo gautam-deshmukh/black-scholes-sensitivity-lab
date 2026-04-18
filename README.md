@@ -4,14 +4,15 @@ A Python project for pricing European call and put options with the Black-Schole
 
 ## Project background
 
-This project originally began as a single Python script (`black-scholes.py`) that implemented Black-Scholes pricing and Greeks-based sensitivity analysis. It was later refactored into a structured GitHub repository with modular files for pricing, Greeks, utilities, and the command-line interface.
+This project originally began as a single Python script (`black-scholes.py`) that implemented Black-Scholes pricing and Greeks-based sensitivity analysis. I later refactored it into a structured GitHub repository with modular files for pricing, Greeks, utilities, testing, and visualization so the project would be easier to maintain, extend, and showcase.
 
 ## Features
 
 - Black-Scholes pricing for European call and put options
 - Greeks-based sensitivity analysis
 - Modular Python code structure
-- Room for plots, experiments, and tests
+- Automated test coverage for pricing correctness
+- Visualization support for sensitivity analysis
 - Refactored from a single-file script into a cleaner project layout
 
 ## Repository structure
@@ -27,10 +28,13 @@ black-scholes-sensitivity-lab/
 │   ├── __init__.py
 │   ├── pricing.py
 │   ├── greeks.py
-│   └── utils.py
-├── notebooks/
+│   ├── utils.py
+│   └── visualization.py
 ├── tests/
+│   └── test_pricing.py
+├── notebooks/
 └── figures/
+    └── call_price_vs_volatility.png
 ```
 
 ## Tech stack
@@ -39,6 +43,7 @@ black-scholes-sensitivity-lab/
 - NumPy
 - SciPy
 - Matplotlib
+- Pytest
 
 ## Getting started
 
@@ -52,26 +57,46 @@ cd black-scholes-sensitivity-lab
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
-Run the project:
+## Running the project
+
+Run the command-line version:
 
 ```bash
-python main.py
+python3 main.py
 ```
+
+Run the test suite:
+
+```bash
+python3 -m pytest
+```
+
+Generate the volatility sensitivity plot:
+
+```bash
+python3 -m src.visualization
+```
+
+## Example output
+
+The figure below shows how the Black-Scholes call option price changes as volatility increases while the other model inputs are held fixed. In this setup, the call option price rises as volatility increases, which is consistent with the model’s sensitivity to sigma.
+
+![Call Option Price vs Volatility](figures/call_price_vs_volatility.png)
 
 ## Current status
 
-The repository scaffold has been created and the original single-file implementation is being refactored into modular components.
+The project has been migrated from a single-file prototype into a modular repository with pricing logic, Greeks calculations, testing, and visualization support. This version is intended to be a cleaner and more extensible foundation for future quantitative finance experiments.
 
 ## Planned improvements
 
-- Add clean pricing and Greeks modules
-- Add visualizations for sensitivity analysis
-- Add unit tests for known option-pricing cases
-- Add a notebook for exploration and demonstrations
-- Potentially extend the project with implied volatility or Monte Carlo pricing
+- Add additional Greeks visualizations
+- Add more unit tests for pricing and risk metrics
+- Add notebooks for experimentation and demonstrations
+- Extend the project with implied volatility estimation
+- Compare analytical Black-Scholes pricing with Monte Carlo methods
 
 ## Author
 
