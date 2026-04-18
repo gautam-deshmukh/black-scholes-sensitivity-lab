@@ -2,9 +2,9 @@
 
 A Python project for pricing European call and put options with the Black-Scholes model and analyzing parameter sensitivity through the Greeks.
 
-## Project background
+## Overview
 
-This project originally began as a single Python script (`black-scholes.py`) that implemented Black-Scholes pricing and Greeks-based sensitivity analysis. I later refactored it into a structured GitHub repository with modular files for pricing, Greeks, utilities, testing, and visualization so the project would be easier to maintain, extend, and showcase.
+This project began as a single Python script (`black-scholes.py`) for computing Black-Scholes option prices and core Greeks for European options. I later refactored it into a structured GitHub repository with modular files for pricing, Greeks, utilities, testing, and visualization to make the project easier to maintain, validate, and extend.
 
 ## Features
 
@@ -12,8 +12,8 @@ This project originally began as a single Python script (`black-scholes.py`) tha
 - Greeks-based sensitivity analysis
 - Modular Python code structure
 - Automated test coverage for pricing correctness
-- Visualization support for sensitivity analysis
-- Refactored from a single-file script into a cleaner project layout
+- Visualization support for model behavior and parameter sensitivity
+- Refactored from a single-file prototype into a cleaner project layout
 
 ## Repository structure
 
@@ -82,20 +82,20 @@ python3 -m src.visualization
 
 ## Example output
 
-The figure below shows how the Black-Scholes call option price changes as volatility increases while the other model inputs are held fixed. In this setup, the call option price rises as volatility increases, which is consistent with the model’s sensitivity to sigma.
+The figure below shows how the Black-Scholes call option price changes as volatility increases while the other model inputs are held fixed. The upward trend is consistent with the model’s sensitivity to volatility.
 
 ![Call Option Price vs Volatility](figures/call_price_vs_volatility.png)
 
 ## Current status
 
-The project has been migrated from a single-file prototype into a modular repository with pricing logic, Greeks calculations, testing, and visualization support. This version is intended to be a cleaner and more extensible foundation for future quantitative finance experiments.
+The project has been migrated from a single-file prototype into a modular repository with pricing logic, Greeks calculations, testing, and visualization support. This version is meant to serve as a stronger foundation for future quantitative finance experiments and extensions.
 
 ## Planned improvements
 
 - Add additional Greeks visualizations
 - Add more unit tests for pricing and risk metrics
 - Add notebooks for experimentation and demonstrations
-- Extend the project with implied volatility estimation
+- Add implied volatility estimation
 - Compare analytical Black-Scholes pricing with Monte Carlo methods
 
 ## Author
