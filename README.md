@@ -34,7 +34,8 @@ black-scholes-sensitivity-lab/
 │   └── test_pricing.py
 ├── notebooks/
 └── figures/
-    └── call_price_vs_volatility.png
+    ├── call_price_vs_volatility.png
+    └── greeks_vs_stock_price.png
 ```
 
 ## Tech stack
@@ -50,7 +51,7 @@ black-scholes-sensitivity-lab/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/black-scholes-sensitivity-lab.git
+git clone https://github.com/gautam-deshmukh/black-scholes-sensitivity-lab.git
 cd black-scholes-sensitivity-lab
 ```
 
@@ -74,17 +75,25 @@ Run the test suite:
 python3 -m pytest
 ```
 
-Generate the volatility sensitivity plot:
+Generate the visualizations:
 
 ```bash
 python3 -m src.visualization
 ```
 
-## Example output
+## Example visualizations
 
-The figure below shows how the Black-Scholes call option price changes as volatility increases while the other model inputs are held fixed. The upward trend is consistent with the model’s sensitivity to volatility.
+### Call price vs volatility
+
+This plot shows how the Black-Scholes call option price changes as volatility increases while the other model inputs are held fixed. The upward trend is consistent with the model’s sensitivity to volatility.
 
 ![Call Option Price vs Volatility](figures/call_price_vs_volatility.png)
+
+### Greeks vs stock price
+
+This figure shows how delta, gamma, and vega change as the underlying stock price moves across out-of-the-money, at-the-money, and in-the-money regions.
+
+![Greeks vs Stock Price](figures/greeks_vs_stock_price.png)
 
 ## Current status
 
@@ -92,7 +101,7 @@ The project has been migrated from a single-file prototype into a modular reposi
 
 ## Planned improvements
 
-- Add additional Greeks visualizations
+- Expand the visualization suite with additional parameter sweeps and time-to-expiry analysis
 - Add more unit tests for pricing and risk metrics
 - Add notebooks for experimentation and demonstrations
 - Add implied volatility estimation
